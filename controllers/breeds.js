@@ -52,23 +52,33 @@ const createBreed = async (req, res) => {
 };
 
 const updateBreed = async (req, res) => {
-    const horseId = req.params.id;
-    const updatedHorseData = req.body;
-
+    const infoId = req.params.id;
+    const updatedInfoData = req.body; // Get the updated info data from the request body
     try {
-        const result = await mongodb.getDb().db().collection('breeds').updateOne(
-            { _id: new ObjectId(horseId) },
-            { $set: updatedHorseData }
-        );
-        if (result.matchedCount === 0) {
-            return res.status(404).json({ message: 'Horse not found' });
+        // Check if any required properties are missing
+        if (!updatedInfoData.name || !updatedInfoData.height || !updatedInfoData.average_age || !updatedInfoData.weight || !updatedInfoData.classification || !updatedInfoData.colorings || !updatedInfoData.interesting_fact) {
+            return res.status(400).json({ error: 'Missing required fields' });
         }
-        res.status(200).json({ message: 'Horse updated successfully' });
+
+        // Update the information in the database
+        const result = await mongodb.getDb().db().collection('Infos').updateOne(
+            { _id: new ObjectId(infoId) },
+            { $set: updatedInfoData } // Use $set to update specific fields
+        );
+
+        if (result.matchedCount === 0) {
+            // No information with the specified ID was found
+            return res.status(404).json({ message: 'Information not found' });
+        }
+
+        console.log("Information updated successfully");
+        res.status(200).json({ message: 'Information updated successfully' });
     } catch (error) {
-        console.error('Error updating horse:', error);
-        res.status(500).json({ error: 'Internal server error' });
+        console.error('Error updating information:', error);
+        res.status(500).json({ error: 'Internal Server Error' });
     }
-};
+}
+
 
 const deleteBreed = async (req, res) => {
     const horseId = new ObjectId(req.params.id);

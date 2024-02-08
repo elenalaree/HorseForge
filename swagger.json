@@ -108,11 +108,44 @@
             "in": "path",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "any"
+                },
+                "height": {
+                  "example": "any"
+                },
+                "average_age": {
+                  "example": "any"
+                },
+                "weight": {
+                  "example": "any"
+                },
+                "classification": {
+                  "example": "any"
+                },
+                "colorings": {
+                  "example": "any"
+                },
+                "interesting_fact": {
+                  "example": "any"
+                }
+              }
+            }
           }
         ],
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
           },
           "404": {
             "description": "Not Found"
