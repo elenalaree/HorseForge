@@ -5,7 +5,7 @@
     "description": "A collection of horse breeds and a barn to put them in.",
     "version": "1.0.0"
   },
-  "host": "practice-7kdp.onrender.com",
+  "host": "horse-forge.onrender.com",
   "basePath": "/",
   "schemes": [
     "https"
