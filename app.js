@@ -1,9 +1,9 @@
 const express = require("express");
 const port = process.env.PORT || 3001;
-const dot = require('dotenv');
-dot.config();
+const dotenv = require('dotenv');
+dotenv.config();
 const bodyParser = require('body-parser');
-const mongodb = require("./database/contactsDB")
+const mongodb = require("./database/index.js")
 
 
 const app = express();

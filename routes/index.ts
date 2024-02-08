@@ -1,1 +1,0 @@
-const routie = require('../app')
