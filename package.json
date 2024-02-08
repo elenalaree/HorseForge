@@ -1,0 +1,37 @@
+{
+  "name": "classpractice",
+  "version": "1.0.0",
+  "description": "My name, on render for the world to see.",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/render-examples/express-hello-world.git"
+  },
+  "author": "Elena Rogers",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "swagger": "node ./swagger.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongodb": "^6.3.0",
+    "mongoose": "^8.1.1",
+    "swagger-ui-express": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "bugs": {
+    "url": "https://github.com/render-examples/express-hello-world/issues"
+  },
+  "homepage": "https://github.com/render-examples/express-hello-world#readme",
+  "devDependencies": {
+    "nodemon": "^3.0.2",
+    "swagger-autogen": "^2.23.7"
+  }
+}

@@ -1,11 +1,15 @@
-const mongodb = require('../database/mongoDB');
-const ObjectId = require('mongodb').ObjectId;
-const Horse = require('../models/horse-model');
+import { Request, Response } from 'express';
+import { ObjectId, InsertOneResult  } from 'mongodb';
+import mongodb from '../database/index.ts';
+import Horse, { HorseDocument } from '../models/index.ts';
 
+interface InsertResponse<T> extends InsertOneResult<T> {
+    ops: T[];
+}
 
-const getAll = async (req, res) => {
+const getAll = async (req: Request, res: Response): Promise<void> => {
     try {
-        const result = await mongodb.getDb().db().collection('breeds').find();
+        const result = await mongodb.getDb().collection('breeds').find();
         const breeds = await result.toArray();
         res.json(breeds);
     } catch (error) {
@@ -14,10 +18,10 @@ const getAll = async (req, res) => {
     }
 };
 
-const getBreed = async (req, res) => {
-    const horseId = req.params.id;
+const getBreed = async (req: Request, res: Response): Promise<void> => {
+    const horseId: string = req.params.id;
     try {
-        const horse = await mongodb.getDb().db().collection('breeds').findOne({ _id: new ObjectId(horseId) });
+        const horse: HorseDocument | null = await mongodb.getDb().collection('breeds').findOne({ _id: new ObjectId(horseId) }) as HorseDocument | null;
         if (!horse) {
             return res.status(404).json({ message: 'Horse not found' });
         }
@@ -26,25 +30,17 @@ const getBreed = async (req, res) => {
         console.error('Error fetching horse:', error);
         res.status(500).json({ error: 'Internal server error' });
     }
-};
+}
 
-const createBreed = async (req, res) => {
-    const horse = new Horse({
-        name: req.body.name,
-        height: req.body.height,
-        average_age: req.body.average_age,
-        weight: req.body.weight,
-        classification: req.body.classification,
-        colorings: req.body.colorings,
-        interesting_fact: req.body.interesting_fact
-    });
+const createBreed = async (req: Request, res: Response): Promise<void> => {
+    const horseData: typeof Horse = req.body; 
 
     try {
-        const response = await mongodb.getDb().db().collection('breeds').insertOne(horse);
+        const response: InsertOneResult<HorseDocument> = await mongodb.getDb().collection('breeds').insertOne(horseData);
         if (response.acknowledged) {
-            res.status(201).json({ message: 'Horse created successfully', horse });
+            res.status(201).json({ message: 'Horse created successfully', horse: (response as any).ops[0] });
         } else {
-            res.status(500).json(response.error || 'Some error occurred while creating the horse.');
+            res.status(500).json({ error: 'Some error occurred while creating the horse.' });
         }
     } catch (error) {
         console.error('Error creating horse:', error);
@@ -57,7 +53,7 @@ const updateBreed = async (req, res) => {
     const updatedHorseData = req.body;
 
     try {
-        const result = await mongodb.getDb().db().collection('breeds').updateOne(
+        const result = await mongodb.getDb().collection('breeds').updateOne(
             { _id: new ObjectId(horseId) },
             { $set: updatedHorseData }
         );
@@ -72,9 +68,9 @@ const updateBreed = async (req, res) => {
 };
 
 const deleteBreed = async (req, res) => {
-    const horseId = new ObjectId(req.params.id);
+    const horseId = req.params.id;
     try {
-        const response = await mongodb.getDb().db().collection('breeds').deleteOne({ _id: horseId });
+        const response = await mongodb.getDb().collection('breeds').deleteOne({ _id: horseId });
         if (response.deletedCount > 0) {
             res.status(200).json({ message: 'Horse deleted successfully' });
         } else {
