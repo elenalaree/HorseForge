@@ -5,7 +5,7 @@ const doc = {
         title: 'breeds',
         description: 'breeds API: BYI Idaho'
     },
-    host: 'practice-7kdp.onrender.com',
+    host: 'horse-forge.onrender.com',
     schemes: ['https']
 };
 

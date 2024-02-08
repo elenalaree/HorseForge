@@ -6,7 +6,6 @@ const getAll = async (req, res) => {
     try {
         const result = await mongodb.getDb().db().collection('breeds').find();
         const breeds = await result.toArray();
-        console.log(breeds)
         res.json(breeds);
     } catch (error) {
         console.error('Error fetching all breeds:', error);
