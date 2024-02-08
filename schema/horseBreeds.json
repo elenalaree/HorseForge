@@ -1,0 +1,119 @@
+[
+    {
+        "name": "Thoroughbred",
+        "height": "15-17 hands",
+        "average_age": "25-30 years",
+        "weight": "1000-1200 pounds",
+        "classification": "Horse",
+        "colorings": "Various solid colors",
+        "interesting_fact": "Thoroughbreds have a higher percentage of fast-twitch muscle fibers, contributing to their speed."
+    },
+    {
+        "name": "Arabian",
+        "height": "14-15 hands",
+        "average_age": "25-30 years",
+        "weight": "800-1000 pounds",
+        "classification": "Horse",
+        "colorings": "Bay, gray, chestnut, black",
+        "interesting_fact": "Arabians have one less lumbar vertebra and one less rib than other horse breeds."
+    },
+    {
+        "name": "Quarter Horse",
+        "height": "14-16 hands",
+        "average_age": "25-30 years",
+        "weight": "1000-1250 pounds",
+        "classification": "Horse",
+        "colorings": "Various solid colors, often sorrel or bay",
+        "interesting_fact": "The American Quarter Horse is the most popular breed in the United States."
+    },
+    {
+        "name": "Friesian",
+        "height": "15-17 hands",
+        "average_age": "20-25 years",
+        "weight": "1200-1500 pounds",
+        "classification": "Horse",
+        "colorings": "Black, occasionally chestnut",
+        "interesting_fact": "Friesians have a long, flowing mane and tail, often referred to as 'the breed's crowning glory.'"
+    },
+    {
+        "name": "Andalusian",
+        "height": "15-16 hands",
+        "average_age": "20-25 years",
+        "weight": "1000-1200 pounds",
+        "classification": "Horse",
+        "colorings": "Gray, bay, black, occasionally chestnut",
+        "interesting_fact": "Andalusians were used as cavalry horses by the armies of Julius Caesar and other Roman generals."
+    },
+    {
+        "name": "Suffolk Punch",
+        "height": "16-17 hands",
+        "average_age": "20-25 years",
+        "weight": "1800-2300 pounds",
+        "classification": "Draft",
+        "colorings": "Chestnut",
+        "interesting_fact": "Suffolk Punch horses are one of the oldest English horse breeds, originating from the county of Suffolk."
+    },
+    {
+        "name": "Shire",
+        "height": "16-18 hands",
+        "average_age": "20-25 years",
+        "weight": "1800-2400 pounds",
+        "classification": "Draft",
+        "colorings": "Black, bay, gray, sometimes chestnut",
+        "interesting_fact": "The Shire horse is one of the largest and strongest horse breeds, known for its calm temperament and distinctive feathering on the lower legs."
+    },
+    {
+        "name": "Gypsy Vanner",
+        "height": "14-15 hands",
+        "average_age": "20-25 years",
+        "weight": "1200-1400 pounds",
+        "classification": "Horse",
+        "colorings": "Piebald, skewbald in almost any color ",
+        "interesting_fact": "Gypsy Vanner horses were originally bred by the Romani people of the British Isles to pull their colorful caravans."
+    },
+    {
+        "name": "Welsh Pony",
+        "height": "11-13 hands",
+        "average_age": "25-30 years",
+        "weight": "600-800 pounds",
+        "classification": "Pony",
+        "colorings": "Various colors, often gray, black, or chestnut",
+        "interesting_fact": "The Welsh Pony is known for its intelligence, hardiness, and versatility, excelling in both riding and driving disciplines."
+    },
+    {
+        "name": "Pony of the Americas",
+        "height": "11-14 hands",
+        "average_age": "25-30 years",
+        "weight": "600-900 pounds",
+        "classification": "Pony",
+        "colorings": "Appaloosa patterns",
+        "interesting_fact": "The Pony of the Americas breed was developed in the United States and is known for its colorful coat patterns and friendly disposition."
+    },
+    {
+        "name": "Appaloosa",
+        "height": "14-16 hands",
+        "average_age": "25-30 years",
+        "weight": "1000-1250 pounds",
+        "classification": "Horse",
+        "colorings": "Appaloosa patterns",
+        "interesting_fact": "Appaloosas are known for their spotted coats and are commonly used in Western riding disciplines."
+    },
+    {
+        "name": "Tennessee Walker",
+        "height": "14-17 hands",
+        "average_age": "20-25 years",
+        "weight": "900-1200 pounds",
+        "classification": "Horse",
+        "colorings": "Various solid colors",
+        "interesting_fact": "The Tennessee Walking Horse is famous for its smooth, four-beat running walk, making it a popular choice for trail riding and endurance competitions."
+    },
+    {
+        "name": "Percheron",
+        "height": "16-18 hands",
+        "average_age": "20-25 years",
+        "weight": "1900-2600 pounds",
+        "classification": "Draft",
+        "colorings": "Gray or black",
+        "interesting_fact": "Percherons are among the tallest and heaviest horse breeds, known for their strength and versatility in agriculture, logging, and driving."
+    }
+]
