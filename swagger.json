@@ -1,8 +1,8 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "HorseForge",
-    "description": "A collection of horse breeds and a barn to put them in.",
+    "title": "breeds",
+    "description": "breeds API: BYI Idaho",
     "version": "1.0.0"
   },
   "host": "horse-forge.onrender.com",
@@ -21,12 +21,15 @@
         }
       }
     },
-    "/contacts/": {
+    "/breeds/": {
       "get": {
         "description": "",
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
@@ -39,19 +42,25 @@
             "schema": {
               "type": "object",
               "properties": {
-                "firstName": {
+                "name": {
                   "example": "any"
                 },
-                "lastName": {
+                "height": {
                   "example": "any"
                 },
-                "email": {
+                "average_age": {
                   "example": "any"
                 },
-                "favoriteColor": {
+                "weight": {
                   "example": "any"
                 },
-                "birthday": {
+                "classification": {
+                  "example": "any"
+                },
+                "colorings": {
+                  "example": "any"
+                },
+                "interesting_fact": {
                   "example": "any"
                 }
               }
@@ -68,7 +77,7 @@
         }
       }
     },
-    "/contacts/{id}": {
+    "/breeds/{id}": {
       "get": {
         "description": "",
         "parameters": [
@@ -99,32 +108,11 @@
             "in": "path",
             "required": true,
             "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "firstName": {
-                  "example": "any"
-                },
-                "lastName": {
-                  "example": "any"
-                },
-                "email": {
-                  "example": "any"
-                }
-              }
-            }
           }
         ],
         "responses": {
           "200": {
             "description": "OK"
-          },
-          "400": {
-            "description": "Bad Request"
           },
           "404": {
             "description": "Not Found"
@@ -147,6 +135,9 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
           },
           "500": {
             "description": "Internal Server Error"
