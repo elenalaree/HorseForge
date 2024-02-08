@@ -1,11 +1,11 @@
 {
-  "name": "classpractice",
+  "name": "horseforge",
   "version": "1.0.0",
-  "description": "My name, on render for the world to see.",
+  "description": "A horse breed list and a barn to collect horse types.",
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/render-examples/express-hello-world.git"
+    "url": "git+https://github.com/elenalaree/HorseForge"
   },
   "author": "Elena Rogers",
   "license": "MIT",
@@ -21,6 +21,7 @@
     "express": "^4.18.2",
     "mongodb": "^6.3.0",
     "mongoose": "^8.1.1",
+    "swagger": "^0.7.5",
     "swagger-ui-express": "^5.0.0"
   },
   "engines": {
