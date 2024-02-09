@@ -1,0 +1,36 @@
+# GET all breeds
+GET http://localhost:3000/breeds
+
+# GET a single breed by ID
+GET http://localhost:3000/breeds/1234567890
+
+# POST create a new breed
+POST http://localhost:3000/breeds
+Content-Type: application/json
+
+{
+    "name": "Percheron",
+    "height": "16-18 hands",
+    "average_age": "20-25 years",
+    "weight": "1900-2600 pounds",
+    "classification": "Draft",
+    "colorings": "Gray or black",
+    "interesting_fact": "Percherons are among the tallest and heaviest horse breeds, known for their strength and versatility in agriculture, logging, and driving."
+}
+
+# PUT modify an existing breed by ID
+PUT http://localhost:3000/breeds/1234567890
+Content-Type: application/json
+
+{
+    "name": "Modified Breed Name",
+    "height": "Modified Height",
+    "average_age": "Modified Age",
+    "weight": "Modified Weight",
+    "classification": "Modified Classification",
+    "colorings": "Modified Colorings",
+    "interesting_fact": "Modified Interesting Fact"
+}
+
+# DELETE a breed by ID
+DELETE http://localhost:3000/breeds/1234567890
