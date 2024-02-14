@@ -1,5 +1,8 @@
 const routes = require('express').Router();
 
+const {validateBreed, validateUpdateBreed, validateDeleteBreed } = require('horse.js');
+
+
 const controls = require('../controllers/breeds.js')
 // Get all contacts
 routes.get("/", controls.getAll);
@@ -8,11 +11,11 @@ routes.get("/", controls.getAll);
 
 routes.get("/:id", controls.getBreed);
 // Create Breed
-routes.post("/", controls.createBreed);
+routes.post("/", validateBreed, controls.createBreed);
 // Modify Breed
-routes.put('/:id', controls.updateBreed);
+routes.put('/:id', validateUpdateBreed, controls.updateBreed);
 // Delete breed
-routes.delete('/:id', controls.deleteBreed);
+routes.delete('/:id', validateDeleteBreed, controls.deleteBreed);
 
 
 module.exports = routes;
