@@ -8,6 +8,7 @@ const horseSchema = mongoose.Schema({
     classification: { type: String, required: true },
     colorings: { type: String, required: true },
     interesting_fact: { type: String, required: true }
-});
+}, { collection: 'breeds' });
+
 
 module.exports = mongoose.model('Horse', horseSchema);

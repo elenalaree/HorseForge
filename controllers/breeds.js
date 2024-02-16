@@ -2,6 +2,7 @@ const mongodb = require('../database/index.js');
 const ObjectId = require('mongodb').ObjectId;
 const Horse = require('../models/Horse.js');
 const { validationResult } = require('express-validator');
+const mongoose = require('mongoose');
 
 
 const getAll = async (req, res) => {
@@ -30,32 +31,30 @@ const getBreed = async (req, res) => {
 };
 
 const createBreed = async (req, res) => {
-    // Check for validation errors
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-        return res.status(400).json({ errors: errors.array() });
-    }
+    const horse = new Horse({
+        name: req.body.name,
+        height: req.body.height,
+        average_age: req.body.average_age,
+        weight: req.body.weight,
+        classification: req.body.classification,
+        colorings: req.body.colorings,
+        interesting_fact: req.body.interesting_fact
+    });
 
     try {
-        const horse = new Horse({
-            name: req.body.name,
-            height: req.body.height,
-            average_age: req.body.average_age,
-            weight: req.body.weight,
-            classification: req.body.classification,
-            colorings: req.body.colorings,
-            interesting_fact: req.body.interesting_fact
-        });
-
-        // Save the horse to the database
-        await horse.save();
-
-        res.status(201).json({ message: 'Horse breed created successfully', horse });
+        const response = await mongodb.getDb().db().collection('breeds').insertOne(horse);
+        if (response.acknowledged) {
+            res.status(201).json({ message: 'Horse created successfully', horse });
+        } else {
+            res.status(500).json(response.error || 'Some error occurred while creating the horse.');
+        }
     } catch (error) {
-        console.error(error.message);
-        res.status(500).send('Server Error');
+        console.error('Error creating horse:', error);
+        res.status(500).json({ error: 'Internal server error' });
     }
 };
+
+
 
 const updateBreed = async (req, res) => {
     const infoId = req.params.id;
@@ -67,7 +66,7 @@ const updateBreed = async (req, res) => {
         }
 
         // Update the information in the database
-        const result = await mongodb.getDb().db().collection('Infos').updateOne(
+        const result = await mongodb.getDb().db().collection('breeds').updateOne(
             { _id: new ObjectId(infoId) },
             { $set: updatedInfoData } // Use $set to update specific fields
         );
@@ -88,12 +87,6 @@ const updateBreed = async (req, res) => {
 
 const deleteBreed = async (req, res) => {
     const horseId = new ObjectId(req.params.id);
-
-    // Check for validation errors
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-        return res.status(400).json({ errors: errors.array() });
-    }
 
     try {
         const response = await mongodb.getDb().db().collection('breeds').deleteOne({ _id: horseId });
