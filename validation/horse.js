@@ -8,10 +8,10 @@ const validateHorse = [
     body('height').notEmpty().withMessage('Height is required'),
 
     // Age is required
-    body('age').notEmpty().isNumeric('Age is required'),
+    body('age').notEmpty().withMessage('Age is required'),
 
     // Weight is required
-    body('weight').notEmpty().isNumeric('Weight is required'),
+    body('weight').notEmpty().withMessage('Weight is required'),
 
     // breed must not be empty
     body('breed').notEmpty().withMessage('Breed is required'),
