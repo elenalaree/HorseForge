@@ -11,7 +11,7 @@ routes.get("/", controls.allHorses);
 
 routes.get("/:id", controls.getHorse);
 // Create Horse
-routes.post("/", validateHorse, controls.createHorse);
+routes.post("/", controls.createHorse);
 // Modify Horse
 routes.put('/:id', validateUpdateHorse, controls.updateHorse);
 // Delete breed

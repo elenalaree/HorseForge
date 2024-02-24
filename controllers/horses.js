@@ -1,6 +1,6 @@
 const mongodb = require('../database/index.js');
 const ObjectId = require('mongodb').ObjectId;
-const Horse = require('../models/Breed.js');
+const Horse = require('../models/Horse.js');
 const { validationResult } = require('express-validator');
 const mongoose = require('mongoose');
 
@@ -31,6 +31,7 @@ const getHorse = async (req, res) => {
 };
 
 const createHorse = async (req, res) => {
+    console.log(res)
     const horse = new Horse({
         name: req.body.name,
         height: req.body.height,
@@ -40,7 +41,7 @@ const createHorse = async (req, res) => {
         color: req.body.color,
         gender: req.body.gender
     });
-
+    console.log(res)
     try {
         const response = await mongodb.getDb().db().collection('myBarn').insertOne(horse);
         if (response.acknowledged) {

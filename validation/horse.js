@@ -8,10 +8,10 @@ const validateHorse = [
     body('height').notEmpty().withMessage('Height is required'),
 
     // Age is required
-    body('age').notEmpty().withMessage('Age is required'),
+    body('age').notEmpty().withMessage('Age is required').isNumeric().withMessage('Age must be a number'),
 
     // Weight is required
-    body('weight').notEmpty().withMessage('Weight is required'),
+    body('weight').notEmpty().withMessage('Weight is required').isNumeric().withMessage('Weight must be a number'),
 
     // breed must not be empty
     body('breed').notEmpty().withMessage('Breed is required'),
@@ -30,8 +30,8 @@ const validateUpdateHorse = [
     // Check if all required properties are provided in the request body
     body('name').notEmpty().withMessage('Name is required'),
     body('height').notEmpty().withMessage('Height is required'),
-    body('age').notEmpty().withMessage('Age is required'),
-    body('weight').notEmpty().withMessage('Weight is required'),
+    body('age').notEmpty().withMessage('Age is required').isNumeric().withMessage('Age must be a number'),
+    body('weight').notEmpty().withMessage('Weight is required').isNumeric().withMessage('Weight must be a number'),
     body('breed').notEmpty().withMessage('Breed is required'),
     body('color').notEmpty().withMessage('Color is required'),
     body('gender').notEmpty().withMessage('Gender fact is required')
