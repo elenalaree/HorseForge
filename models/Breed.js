@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const horseSchema = mongoose.Schema({
+const breedSchema = mongoose.Schema({
     name: { type: String, required: true },
     height: { type: String, required: true },
     average_age: { type: String, required: true },
