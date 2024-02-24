@@ -1,6 +1,6 @@
 const mongodb = require('../database/index.js');
 const ObjectId = require('mongodb').ObjectId;
-const Horse = require('../models/Horse.js');
+const Breed = require('../models/Breed.js');
 const { validationResult } = require('express-validator');
 const mongoose = require('mongoose');
 
@@ -17,21 +17,21 @@ const getAll = async (req, res) => {
 };
 
 const getBreed = async (req, res) => {
-    const horseId = req.params.id;
+    const breedId = req.params.id;
     try {
-        const horse = await mongodb.getDb().db().collection('breeds').findOne({ _id: new ObjectId(horseId) });
-        if (!horse) {
-            return res.status(404).json({ message: 'Horse not found' });
+        const breed = await mongodb.getDb().db().collection('breeds').findOne({ _id: new ObjectId(breedId) });
+        if (!breed) {
+            return res.status(404).json({ message: 'Breeds not found' });
         }
-        res.json(horse);
+        res.json(breed);
     } catch (error) {
-        console.error('Error fetching horse:', error);
+        console.error('Error fetching breeds:', error);
         res.status(500).json({ error: 'Failed to fetch breeds.' });
     }
 };
 
 const createBreed = async (req, res) => {
-    const horse = new Horse({
+    const breed = new Breed({
         name: req.body.name,
         height: req.body.height,
         average_age: req.body.average_age,
@@ -42,14 +42,14 @@ const createBreed = async (req, res) => {
     });
 
     try {
-        const response = await mongodb.getDb().db().collection('breeds').insertOne(horse);
+        const response = await mongodb.getDb().db().collection('breeds').insertOne(breed);
         if (response.acknowledged) {
-            res.status(201).json({ message: 'Horse created successfully', horse });
+            res.status(201).json({ message: 'Breed created successfully', breed });
         } else {
-            res.status(500).json(response.error || 'Some error occurred while creating the horse.');
+            res.status(500).json(response.error || 'Some error occurred while creating the breed.');
         }
     } catch (error) {
-        console.error('Error creating horse:', error);
+        console.error('Error creating breed:', error);
         res.status(500).json({ error: 'Internal server error' });
     }
 };
@@ -86,17 +86,17 @@ const updateBreed = async (req, res) => {
 
 
 const deleteBreed = async (req, res) => {
-    const horseId = new ObjectId(req.params.id);
+    const breedId = new ObjectId(req.params.id);
 
     try {
-        const response = await mongodb.getDb().db().collection('breeds').deleteOne({ _id: horseId });
+        const response = await mongodb.getDb().db().collection('breeds').deleteOne({ _id: breedId });
         if (response.deletedCount > 0) {
-            res.status(200).json({ message: 'Horse deleted successfully' });
+            res.status(200).json({ message: 'Breed deleted successfully' });
         } else {
-            res.status(404).json({ message: 'Horse not found' });
+            res.status(404).json({ message: 'Breed not found' });
         }
     } catch (error) {
-        console.error('Error deleting horse:', error);
+        console.error('Error deleting breed:', error);
         res.status(500).json({ error: 'Internal server error' });
     }
 };

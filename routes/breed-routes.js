@@ -1,6 +1,6 @@
 const routes = require('express').Router();
 
-const {validateBreed, validateUpdateBreed, validateDeleteBreed } = require('../validation/horse.js');
+const {validateBreed, validateUpdateBreed, validateDeleteBreed } = require('../validation/breed.js');
 
 
 const controls = require('../controllers/breeds.js')

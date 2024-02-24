@@ -1,0 +1,93 @@
+[
+    {
+        "name": "Thunder",
+        "height": "14.5 hands",
+        "age": 5,
+        "weight": 900,
+        "breed": "Arabian",
+        "color": "Chestnut",
+        "gender": "Stallion"
+    },
+    {
+        "name": "Hollywood Spirit",
+        "height": "15.2 hands",
+        "age": 8,
+        "weight": 1250,
+        "breed": "Quarter Horse",
+        "color": "Bay",
+        "gender": "Stallion"
+    },
+    {
+        "name": "Midnight",
+        "height": "17 hands",
+        "age": 6,
+        "weight": 1300,
+        "breed": "Friesian",
+        "color": "Black",
+        "gender": "Mare"
+    },
+    {
+        "name": "Grace",
+        "height": "17 hands",
+        "age": 4,
+        "weight": 1200,
+        "breed": "Thoroughbred",
+        "color": "Gray",
+        "gender": "Mare"
+    },
+    {
+        "name": "Duke",
+        "height": "16 hands",
+        "age": 10,
+        "weight": 1150,
+        "breed": "Andalusian",
+        "color": "Gray",
+        "gender": "Stallion"
+    },
+    {
+        "name": "Bella",
+        "height": "15.3 hands",
+        "age": 3,
+        "weight": 1850,
+        "breed": "Suffolk Punch",
+        "color": "Chestnut",
+        "gender": "Mare"
+    },
+    {
+        "name": "Max",
+        "height": "18 hands",
+        "age": 7,
+        "weight": 2100,
+        "breed": "Shire",
+        "color": "Black",
+        "gender": "Gelding"
+    },
+    {
+        "name": "Luna",
+        "height": "15.1 hands",
+        "age": 9,
+        "weight": 1280,
+        "breed": "Gypsy Vanner",
+        "color": "Black and white pibald",
+        "gender": "Mare"
+    },
+    {
+        "name": "Charlie",
+        "height": "12.2 hands",
+        "age": 12,
+        "weight": 650,
+        "breed": "Welsh Pony",
+        "color": "Gray",
+        "gender": "Gelding"
+    },
+    {
+        "name": "Rosie",
+        "height": "14.3 hands",
+        "age": 5,
+        "weight": 700,
+        "breed": "Pony of the Americas",
+        "color": "Bay",
+        "gender": "Mare"
+    }
+]
+

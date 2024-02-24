@@ -1,46 +1,46 @@
 const { body, param } = require('express-validator');
 
-const validateBreed = [
+const validateHorse = [
     // Name must not be empty
     body('name').notEmpty().withMessage('Name is required'),
 
     // Height is required
     body('height').notEmpty().withMessage('Height is required'),
 
-    // Average age is required
-    body('average_age').notEmpty().withMessage('Average age is required'),
+    // Age is required
+    body('age').notEmpty().isNumeric('Age is required'),
 
     // Weight is required
-    body('weight').notEmpty().withMessage('Weight is required'),
+    body('weight').notEmpty().isNumeric('Weight is required'),
 
-    // Classification must not be empty
-    body('classification').notEmpty().withMessage('Classification is required'),
+    // breed must not be empty
+    body('breed').notEmpty().withMessage('Breed is required'),
 
-    // Colorings must not be empty
-    body('colorings').notEmpty().withMessage('Colorings is required'),
+    // Color must not be empty
+    body('color').notEmpty().withMessage('Color is required'),
 
     // Interesting fact must not be empty
-    body('interesting_fact').notEmpty().withMessage('Interesting fact is required')
+    body('gender').notEmpty().withMessage('Gender is required')
 ];
 // Validation middleware for updating breed information
-const validateUpdateBreed = [
+const validateUpdateHorse = [
     // Check if ID parameter is provided
     param('id').notEmpty().withMessage('ID parameter is required'),
 
     // Check if all required properties are provided in the request body
     body('name').notEmpty().withMessage('Name is required'),
     body('height').notEmpty().withMessage('Height is required'),
-    body('average_age').notEmpty().withMessage('Average age is required'),
+    body('age').notEmpty().withMessage('Age is required'),
     body('weight').notEmpty().withMessage('Weight is required'),
-    body('classification').notEmpty().withMessage('Classification is required'),
-    body('colorings').notEmpty().withMessage('Colorings is required'),
-    body('interesting_fact').notEmpty().withMessage('Interesting fact is required')
+    body('breed').notEmpty().withMessage('Breed is required'),
+    body('color').notEmpty().withMessage('Color is required'),
+    body('gender').notEmpty().withMessage('Gender fact is required')
 ];
 
-const validateDeleteBreed = [
+const validateDeleteHorse = [
     // Check if ID parameter is provided
     param('id').notEmpty().withMessage('ID parameter is required')
 ];
 
 
-module.exports = {validateBreed, validateUpdateBreed, validateDeleteBreed};
+module.exports = {validateHorse, validateUpdateHorse, validateDeleteHorse};
