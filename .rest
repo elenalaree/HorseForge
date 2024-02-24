@@ -72,3 +72,81 @@ DELETE http://localhost:3001/breeds/65c5575b9e2dcecbd5a920f3
 
 ### DELETE a breed by ID (Render)
 DELETE https://horse-forge.onrender.com/breeds/1234567890
+
+# My Barn Routes
+
+# GET all horses (Local)
+GET http://localhost:3001/horses
+
+### GET all horses (Render)
+GET https://horse-forge.onrender.com/horses
+
+### GET a single breed by ID (Local)
+GET http://localhost:3001/horses/65da2449ee24783f75c5f829
+
+### GET a single breed by ID (Render)
+GET https://horse-forge.onrender.com/horses/65da2449ee24783f75c5f829
+
+### POST create a new breed (Local)
+POST http://localhost:3001/horses
+Content-Type: application/json
+
+{
+    "name": "Golden",
+    "height": "15 hands",
+    "age": 8,
+    "weight": 950,
+    "breed": "Al-Tek",
+    "colorings": "Palomino",
+    "gender": "Stallion"
+}
+
+
+
+### POST create a new breed (Render)
+POST https://horse-forge.onrender.com/horses
+Content-Type: application/json
+
+{
+    "name": "Golden",
+    "height": "15 hands",
+    "age": 8,
+    "weight": 950,
+    "breed": "Al-Tek",
+    "colorings": "Palomino",
+    "gender": "Stallion"
+}
+
+### PUT modify an existing breed by ID (Local)
+PUT http://localhost:3001/horses/65da2449ee24783f75c5f829
+Content-Type: application/json
+
+{
+    "name": "Golden",
+    "height": "15 hands",
+    "age": 9,
+    "weight": 950,
+    "breed": "Al-Tek",
+    "colorings": "Palomino",
+    "gender": "Stallion"
+}
+
+### PUT modify an existing breed by ID (Render)
+PUT https://horse-forge.onrender.com/horses/65da2449ee24783f75c5f829
+Content-Type: application/json
+
+{
+    "name": "Golden",
+    "height": "15 hands",
+    "age": 9,
+    "weight": 950,
+    "breed": "Al-Tek",
+    "colorings": "Palomino",
+    "gender": "Stallion"
+}
+
+### DELETE a breed by ID (Local)
+DELETE http://localhost:3001/horses/65da2449ee24783f75c5f829
+
+### DELETE a breed by ID (Render)
+DELETE https://horse-forge.onrender.com/horses/65da2449ee24783f75c5f829
