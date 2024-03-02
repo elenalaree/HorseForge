@@ -1,152 +1,152 @@
-# GET all breeds (Local)
-GET http://localhost:3001/breeds
+# # GET all breeds (Local)
+# GET http://localhost:3001/breeds
 
-### GET all breeds (Render)
-GET https://horse-forge.onrender.com/breeds
+# ### GET all breeds (Render)
+# GET https://horse-forge.onrender.com/breeds
 
-### GET a single breed by ID (Local)
-GET http://localhost:3001/breeds/65c54b1dcbce77b1a2719fbb
+# ### GET a single breed by ID (Local)
+# GET http://localhost:3001/breeds/65c54b1dcbce77b1a2719fbb
 
-### GET a single breed by ID (Render)
-GET https://horse-forge.onrender.com/breeds/65c54b1dcbce77b1a2719fbb
+# ### GET a single breed by ID (Render)
+# GET https://horse-forge.onrender.com/breeds/65c54b1dcbce77b1a2719fbb
 
-### POST create a new breed (Local)
-POST http://localhost:3001/breeds
-Content-Type: application/json
+# ### POST create a new breed (Local)
+# POST http://localhost:3001/breeds
+# Content-Type: application/json
 
-{
-    "name": "Miniature Horse",
-    "height": "Under 34 inches (86 cm)",
-    "average_age": "25-35 years",
-    "weight": "150-350 pounds (68-158 kg)",
-    "classification": "Pony",
-    "colorings": "Various, including bay, black, chestnut, and pinto patterns",
-    "interesting_fact": "Miniature horses are bred for their small size and gentle temperament, making them popular as pets and therapy animals. Despite their diminutive stature, they are known for their intelligence and versatility, capable of participating in various equestrian activities such as driving and agility competitions."
-}
-
-
-
-### POST create a new breed (Render)
-POST https://horse-forge.onrender.com/breeds
-Content-Type: application/json
-
-{
-    "name": "Miniature Horse",
-    "height": "Under 34 inches (86 cm)",
-    "average_age": "25-35 years",
-    "weight": "150-350 pounds (68-158 kg)",
-    "classification": "Pony",
-    "colorings": "Various, including bay, black, chestnut, and pinto patterns",
-    "interesting_fact": "Miniature horses are bred for their small size and gentle temperament, making them popular as pets and therapy animals. Despite their diminutive stature, they are known for their intelligence and versatility, capable of participating in various equestrian activities such as driving and agility competitions."
-}
-
-### PUT modify an existing breed by ID (Local)
-PUT http://localhost:3001/breeds/65c54b1dcbce77b1a2719fc1
-Content-Type: application/json
-
-{
-    "name": "Percheron",
-    "height": "16-18 hands",
-    "average_age": "20-25 years",
-    "weight": "1900-2600 pounds",
-    "classification": "Draft",
-    "colorings": "Gray or black.",
-    "interesting_fact": "Percherons are among the tallest and heaviest horse breeds, known for their strength and versatility in agriculture, logging, and driving."
-}
-
-### PUT modify an existing breed by ID (Render)
-PUT https://horse-forge.onrender.com/breeds/1234567890
-Content-Type: application/json
-
-{
-    "name": "Percheron",
-    "height": "16-18 hands",
-    "average_age": "20-25 years",
-    "weight": "1900-2600 pounds",
-    "classification": "Draft",
-    "colorings": "Gray or black",
-    "interesting_fact": "Percherons are among the tallest and heaviest horse breeds, known for their strength and versatility in agriculture, logging, and driving."
-}
-### DELETE a breed by ID (Local)
-DELETE http://localhost:3001/breeds/65c5575b9e2dcecbd5a920f3
-
-### DELETE a breed by ID (Render)
-DELETE https://horse-forge.onrender.com/breeds/1234567890
-
-# My Barn Routes
-
-### GET all horses (Local)
-GET http://localhost:3001/horses
-
-### GET all horses (Render)
-GET https://horse-forge.onrender.com/horses
-
-### GET a single horse by ID (Local)
-GET http://localhost:3001/horses/65da2449ee24783f75c5f829
-
-### GET a single horse by ID (Render)
-GET https://horse-forge.onrender.com/horses/65da2449ee24783f75c5f829
-
-### POST create a new horse (Local)
-POST http://localhost:3001/horses
-Content-Type: application/json
-
-{
-    "name": "Golden",
-    "height": "15 hands",
-    "age": 8,
-    "weight": 950,
-    "breed": "Al-Tek",
-    "color": "Palomino",
-    "gender": "Stallion"
-}
+# {
+#     "name": "Miniature Horse",
+#     "height": "Under 34 inches (86 cm)",
+#     "average_age": "25-35 years",
+#     "weight": "150-350 pounds (68-158 kg)",
+#     "classification": "Pony",
+#     "colorings": "Various, including bay, black, chestnut, and pinto patterns",
+#     "interesting_fact": "Miniature horses are bred for their small size and gentle temperament, making them popular as pets and therapy animals. Despite their diminutive stature, they are known for their intelligence and versatility, capable of participating in various equestrian activities such as driving and agility competitions."
+# }
 
 
 
-### POST create a new horse (Render)
-POST https://horse-forge.onrender.com/horses
-Content-Type: application/json
+# ### POST create a new breed (Render)
+# POST https://horse-forge.onrender.com/breeds
+# Content-Type: application/json
 
-{
-    "name": "Golden",
-    "height": "15 hands",
-    "age": 8,
-    "weight": 950,
-    "breed": "Al-Tek",
-    "colorings": "Palomino",
-    "gender": "Stallion"
-}
+# {
+#     "name": "Miniature Horse",
+#     "height": "Under 34 inches (86 cm)",
+#     "average_age": "25-35 years",
+#     "weight": "150-350 pounds (68-158 kg)",
+#     "classification": "Pony",
+#     "colorings": "Various, including bay, black, chestnut, and pinto patterns",
+#     "interesting_fact": "Miniature horses are bred for their small size and gentle temperament, making them popular as pets and therapy animals. Despite their diminutive stature, they are known for their intelligence and versatility, capable of participating in various equestrian activities such as driving and agility competitions."
+# }
 
-### PUT modify an existing breed by ID (Local)
-PUT http://localhost:3001/horses/65da2449ee24783f75c5f829
-Content-Type: application/json
+# ### PUT modify an existing breed by ID (Local)
+# PUT http://localhost:3001/breeds/65c54b1dcbce77b1a2719fc1
+# Content-Type: application/json
 
-{
-    "name": "Golden",
-    "height": "15 hands",
-    "age": 9,
-    "weight": 950,
-    "breed": "Al-Tek",
-    "colorings": "Palomino",
-    "gender": "Stallion"
-}
+# {
+#     "name": "Percheron",
+#     "height": "16-18 hands",
+#     "average_age": "20-25 years",
+#     "weight": "1900-2600 pounds",
+#     "classification": "Draft",
+#     "colorings": "Gray or black.",
+#     "interesting_fact": "Percherons are among the tallest and heaviest horse breeds, known for their strength and versatility in agriculture, logging, and driving."
+# }
 
-### PUT modify an existing breed by ID (Render)
-PUT https://horse-forge.onrender.com/horses/65da2449ee24783f75c5f829
-Content-Type: application/json
+# ### PUT modify an existing breed by ID (Render)
+# PUT https://horse-forge.onrender.com/breeds/1234567890
+# Content-Type: application/json
 
-{
-    "name": "Golden",
-    "height": "15 hands",
-    "age": 9,
-    "weight": 950,
-    "breed": "Al-Tek",
-    "colorings": "Palomino",
-    "gender": "Stallion"
-}
+# {
+#     "name": "Percheron",
+#     "height": "16-18 hands",
+#     "average_age": "20-25 years",
+#     "weight": "1900-2600 pounds",
+#     "classification": "Draft",
+#     "colorings": "Gray or black",
+#     "interesting_fact": "Percherons are among the tallest and heaviest horse breeds, known for their strength and versatility in agriculture, logging, and driving."
+# }
+# ### DELETE a breed by ID (Local)
+# DELETE http://localhost:3001/breeds/65c5575b9e2dcecbd5a920f3
 
-### DELETE a breed by ID (Local)
-DELETE http://localhost:3001/horses/65da2449ee24783f75c5f829
+# ### DELETE a breed by ID (Render)
+# DELETE https://horse-forge.onrender.com/breeds/1234567890
 
-### DELETE a breed by ID (Render)
-DELETE https://horse-forge.onrender.com/horses/65da2449ee24783f75c5f829
+# # My Barn Routes
+
+# ### GET all horses (Local)
+# GET http://localhost:3001/horses
+
+# ### GET all horses (Render)
+# GET https://horse-forge.onrender.com/horses
+
+# ### GET a single horse by ID (Local)
+# GET http://localhost:3001/horses/65da2449ee24783f75c5f829
+
+# ### GET a single horse by ID (Render)
+# GET https://horse-forge.onrender.com/horses/65da2449ee24783f75c5f829
+
+# ### POST create a new horse (Local)
+# POST http://localhost:3001/horses
+# Content-Type: application/json
+
+# {
+#     "name": "Golden",
+#     "height": "15 hands",
+#     "age": 8,
+#     "weight": 950,
+#     "breed": "Al-Tek",
+#     "color": "Palomino",
+#     "gender": "Stallion"
+# }
+
+
+
+# ### POST create a new horse (Render)
+# POST https://horse-forge.onrender.com/horses
+# Content-Type: application/json
+
+# {
+#     "name": "Golden",
+#     "height": "15 hands",
+#     "age": 8,
+#     "weight": 950,
+#     "breed": "Al-Tek",
+#     "colorings": "Palomino",
+#     "gender": "Stallion"
+# }
+
+# ### PUT modify an existing breed by ID (Local)
+# PUT http://localhost:3001/horses/65da2449ee24783f75c5f829
+# Content-Type: application/json
+
+# {
+#     "name": "Golden",
+#     "height": "15 hands",
+#     "age": 9,
+#     "weight": 950,
+#     "breed": "Al-Tek",
+#     "colorings": "Palomino",
+#     "gender": "Stallion"
+# }
+
+# ### PUT modify an existing breed by ID (Render)
+# PUT https://horse-forge.onrender.com/horses/65da2449ee24783f75c5f829
+# Content-Type: application/json
+
+# {
+#     "name": "Golden",
+#     "height": "15 hands",
+#     "age": 9,
+#     "weight": 950,
+#     "breed": "Al-Tek",
+#     "colorings": "Palomino",
+#     "gender": "Stallion"
+# }
+
+# ### DELETE a breed by ID (Local)
+# DELETE http://localhost:3001/horses/65da2449ee24783f75c5f829
+
+# ### DELETE a breed by ID (Render)
+# DELETE https://horse-forge.onrender.com/horses/65da2449ee24783f75c5f829

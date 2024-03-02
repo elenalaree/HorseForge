@@ -1,4 +1,4 @@
-const openName = (req, res, next) => {res.json('Welcome to Horse Forge!');};
+const openName = (req, res, next) => {res.send(`Welcome to Horse Forge, ${req.user.displayName}!`);};
 
 
 

@@ -20,21 +20,6 @@ app
     .use(bodyParser.json());
 
 
-app
-    .use((req, res, next) => {
-        res.setHeader('Access-Control-Allow-Origin', '*');
-        res.setHeader(
-            'Access-Control-Allow-Headers',
-            'Origin, X-Requested-With, Content-Type, Accept'
-        );
-        res.setHeader(
-            'Access-Control-Allow-Methods',
-            'GET, POST, PATCH, PUT, DELETE, OPTIONS'
-        );
-        next();
-    })
-    
-    
 
 app.get("/", (req, res) => {
     res.send('<a href="/auth/google">Authenticate with google</a>')
@@ -42,12 +27,14 @@ app.get("/", (req, res) => {
 app.get('/auth/google',
     passport.authenticate('google', {scope: ['email', 'profile'] }));
     
-app.get('/google/callback',
+app.get('auth/google/callback',
     passport.authenticate('google', {
         successRedirect: '/protected',
         failureRedirect: '/auth/failure'
         }));
-app.use('/protected', require('./routes'));
+app.use('/protected', (req, res) => {
+    res.send("hello")
+});
 
 
 mongodb.initDb((err) => {
