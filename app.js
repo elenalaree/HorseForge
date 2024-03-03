@@ -5,7 +5,6 @@ dotenv.config();
 const bodyParser = require('body-parser');
 const mongodb = require("./database/index.js");
 const passport = require('passport');
-const { ensureAuthenticated } = require("./validation/auth.js");
 require('./validation/auth.js')
 
 const app = express();

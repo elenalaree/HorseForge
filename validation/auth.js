@@ -1,7 +1,7 @@
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 
-const uri = "http://localhost:3001/auth/google/callback" || "https://horse-forge.onrender.com/auth/google/callback"
+const uri ="https://horse-forge.onrender.com/auth/google/callback"
 
 passport.use(new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
